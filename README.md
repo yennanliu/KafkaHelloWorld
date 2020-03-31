@@ -1,9 +1,10 @@
 # KafkaHelloWorld
 
 ## INTRO
-- Kafka `basic setup and simple op` demo via Scala/Python
+- Demo Kafka `basic op` via client side API (Scala/Python)
 	- Kafka producer
 	- Kafka consumer
+	- Kafka broker
 	- Kafka group
 	- Kafka topic
 	- Kafka shift
@@ -38,10 +39,10 @@ brew services stop kafka
 pip3 install -r requirements.txt
 
 # produce event 
-python python/simple_producer.py
+python python/producer_demo.py
 
 # consume event 
-python python/simple_consumer.py
+python python/consumer_demo.py
 
 ```
 
