@@ -13,7 +13,7 @@ libraryDependencies ++= Seq(
   "org.apache.kafka" % "kafka-clients" % "2.1.1",
 
   // depedency 
-  "org.slf4j" % "slf4j-api" % "1.7.25",
+  //"org.slf4j" % "slf4j-api" % "1.7.25",
 
   // test
   "org.scalatest" %% "scalatest" % "3.1.1" % "test"

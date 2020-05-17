@@ -54,8 +54,6 @@ sbt clean compile
 # run KafkaConsumerSubscribeApp : collect event via Kafka Consumer
 #  [1] Consumer.KafkaConsumerSubscribeApp
 #  [2] Producer.KafkaProducerApp
-
-
 ```
 
 
