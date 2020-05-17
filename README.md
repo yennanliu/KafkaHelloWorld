@@ -10,7 +10,10 @@
 	- Kafka shift
 
 - Kafka cluster setup
-	- dev
+	- Manually
+	- Docker
+	- [Confluent](https://github.com/yennanliu/ConfluentHelloWorld)
+	- k8s
 
 ## Prerequisites
 
@@ -35,8 +38,23 @@ brew services stop kafka
 # create kafka topic
 kafka-topics --create -zookeeper localhost:2181 --replication-factor 1  --partitions 1 --topic text_topic
 
+# set up producer  
+kafka-console-producer  --broker-list  127.0.0.1:9092 --topic text_topic --producer-property acks=all  
+
+# set up cosumer 
+kafka-console-consumer   --bootstrap-server  127.0.0.1:9092 --topic text_topic 
+
 # sbt compile
 sbt clean compile
+
+# run KafkaProducerApp : create event via kafka producer
+#  [1] Consumer.KafkaConsumerSubscribeApp
+#  [2] Producer.KafkaProducerApp
+
+# run KafkaConsumerSubscribeApp : collect event via Kafka Consumer
+#  [1] Consumer.KafkaConsumerSubscribeApp
+#  [2] Producer.KafkaProducerApp
+
 
 ```
 

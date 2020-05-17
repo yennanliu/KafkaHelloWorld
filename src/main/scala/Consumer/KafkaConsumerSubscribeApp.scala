@@ -17,7 +17,7 @@ object KafkaConsumerSubscribeApp extends App {
   props.put("enable.auto.commit", "true")
   props.put("auto.commit.interval.ms", "1000")
   val consumer = new KafkaConsumer(props)
-  val topics = List("topic_text")
+  val topics = List("text_topic")
   try {
     consumer.subscribe(topics.asJava)
     while (true) {
