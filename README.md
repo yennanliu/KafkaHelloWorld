@@ -25,6 +25,8 @@
 - Kafka group
 - Kafka topic
 - Kafka shift
+- Kafka - spark
+- Kafka - DB
 
 </details>
 
@@ -99,6 +101,32 @@ python python/consumer_demo.py
 ```
 
 </details>
+
+## Build 
+<details>
+<summary>Build</summary>
+
+```bash 
+sbt assembly
+# [info] Run completed in 31 milliseconds.
+# [info] Total number of tests run: 0
+# [info] Suites: completed 0, aborted 0
+# [info] Tests: succeeded 0, failed 0, canceled 0, ignored 0, pending 0
+# [info] No tests were executed.
+# [info] Strategy 'discard' was applied to 3 files (Run the task at debug level to see details)
+# [info] Assembly up to date: /Users/yennanliu/KafkaHelloWorld/target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar
+# [success] Total time: 1 s, completed S
+
+# run the app via compiled jar
+# app 1 
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Producer.KafkaProducerApp
+# app 2 
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.KafkaConsumerSubscribeApp
+
+```
+</details>
+
+
 
 ## Ref
 
