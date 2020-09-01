@@ -27,6 +27,7 @@
 - Kafka shift
 - Kafka - spark
 - Kafka - DB
+- kafka-schema-registry
 
 </details>
 
@@ -130,5 +131,7 @@ java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.KafkaCons
 <summary>Ref</summary>
 
 - https://sparkbyexamples.com/kafka/apache-kafka-consumer-producer-in-scala/ 
-
+- project dependency
+	- https://github.com/confluentinc/kafka-streams-examples/blob/6f24c506ca79dcf3c9695efd37a9253676176388/pom.xml
+	
 </details>	
