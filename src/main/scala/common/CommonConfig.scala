@@ -13,12 +13,10 @@ object CommonConfig{
         .getConfig(env)
         .withFallback(cfg.getConfig("default"))
 
-    val user: String = config.getString("user")
+    val kafka_user: String = config.getString("user")
 
-    val directory: String = config.getString("directory")
+    val kafka_topic: String = config.getString("topic")
 
-    val dbname: String = config.getString("db.dbname")
-
-    val dbschema: String = config.getString("db.dbschema")
+    val kafka_consumer: String = config.getString("consumer")
 
 }
