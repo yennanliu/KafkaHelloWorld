@@ -1,13 +1,10 @@
 # KafkaHelloWorld
 
 ## INTRO
-- Demo Kafka `basic op` via client side API (Scala/Python)
-	- Kafka producer
-	- Kafka consumer
-	- Kafka broker
-	- Kafka group
-	- Kafka topic
-	- Kafka shift
+- Kafka `basic op` demo via programming language
+	- Scala
+	- Java
+	- Python
 
 - Kafka cluster setup
 	- Manually
@@ -15,7 +12,26 @@
 	- [Confluent](https://github.com/yennanliu/ConfluentHelloWorld)
 	- k8s
 
+## Todo 
+
+<details>
+<summary>Todo</summary>
+
+- Infra
+- Kafka clusters infra code
+- Kafka producer
+- Kafka consumer
+- Kafka broker
+- Kafka group
+- Kafka topic
+- Kafka shift
+
+</details>
+
 ## Prerequisites
+
+<details>
+<summary>Prerequisites</summary>
 
 ```bash
 # install Java, kafka, zookeeper
@@ -33,7 +49,16 @@ brew services stop zookeeper
 brew services stop kafka
 ```
 
-## Qucik start (Scala)
+</details>
+
+
+## Qucik start
+
+<details>
+<summary>Qucik start</summary>
+
+### Qucik start (scala)
+
 ```bash
 # create kafka topic
 kafka-topics --create -zookeeper localhost:2181 --replication-factor 1  --partitions 1 --topic text_topic
@@ -57,7 +82,7 @@ sbt clean compile
 ```
 
 
-## Quick start (Python)
+### Qucik start (python)
 
 ```bash
 # install python client library 
@@ -67,6 +92,9 @@ python python/producer_demo.py
 # consume event 
 python python/consumer_demo.py
 ```
+
+</details>
+
 
 ## Ref
 - https://sparkbyexamples.com/kafka/apache-kafka-consumer-producer-in-scala/ 
