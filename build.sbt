@@ -9,6 +9,9 @@ val sparkVersion = "2.3.0"
 resolvers += Resolver.sonatypeRepo("snapshots")
 
 libraryDependencies ++= Seq(
+  // config
+  "com.typesafe" % "config" % "1.2.1",
+
   // kafka
   "org.apache.kafka" % "kafka-clients" % "2.1.1",
 

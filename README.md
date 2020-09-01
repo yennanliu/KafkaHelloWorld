@@ -55,7 +55,6 @@ brew services stop kafka
 
 </details>
 
-
 ## Qucik start
 
 <details>
@@ -87,7 +86,6 @@ sbt run
 #  [1] Consumer.KafkaConsumerSubscribeApp
 #  [2] Producer.KafkaProducerApp
 ```
-
 
 ### Qucik start (python)
 
@@ -125,8 +123,6 @@ java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.KafkaCons
 
 ```
 </details>
-
-
 
 ## Ref
 
