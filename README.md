@@ -35,6 +35,8 @@
 
 ```bash
 # install Java, kafka, zookeeper
+brew install kafka
+brew install zookeeper
 
 # start zookeeper, kafka
 brew services start zookeeper
@@ -72,6 +74,9 @@ kafka-console-consumer   --bootstrap-server  127.0.0.1:9092 --topic text_topic
 # sbt compile
 sbt clean compile
 
+# sbt run
+sbt run
+
 # run KafkaProducerApp : create event via kafka producer
 #  [1] Consumer.KafkaConsumerSubscribeApp
 #  [2] Producer.KafkaProducerApp
@@ -95,6 +100,11 @@ python python/consumer_demo.py
 
 </details>
 
-
 ## Ref
+
+<details>
+<summary>Ref</summary>
+
 - https://sparkbyexamples.com/kafka/apache-kafka-consumer-producer-in-scala/ 
+
+</details>	
