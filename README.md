@@ -6,14 +6,28 @@
 	- Java
 	- Python
 
-- Kafka cluster setup
-	- Manually
+- Kafka cluster build
+	- [Manually](https://github.com/yennanliu/KafkaHelloWorld#Quick-Start)
 	- Docker
 	- [Confluent](https://github.com/yennanliu/ConfluentHelloWorld)
 	- k8s
 
 ## Todo 
 - [todo.md](https://github.com/yennanliu/KafkaHelloWorld/blob/master/doc/todo.md)
+
+## Development 
+- Git flow
+- dev branch -> master branch
+- Please create the branch as below format
+	- `feature/0001-create-first-feature`
+	- `fix/0001-fix-first-issue`
+	- `hotfix/fix-critical-errors`
+- Step 1 
+	- create branch
+- Step 2
+	- make a PR
+- Step 3
+	- merge to master
 
 ## Prerequisites
 
@@ -40,7 +54,7 @@ brew services stop kafka
 
 </details>
 
-## Qucik start 
+## Quick-Start 
 
 <details>
 <summary>Qucik start</summary>
