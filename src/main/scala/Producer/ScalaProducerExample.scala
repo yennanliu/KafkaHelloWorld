@@ -1,4 +1,4 @@
-package com.colobu.kafka
+package Producer
 
 import java.util.{Date, Properties}
 
