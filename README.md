@@ -40,12 +40,12 @@ brew services stop kafka
 
 </details>
 
-## Qucik start
+## Qucik start 
 
 <details>
 <summary>Qucik start</summary>
 
-### Qucik start (scala)
+### Qucik start manually (scala)
 
 ```bash
 # create kafka topic
@@ -72,7 +72,7 @@ sbt run
 #  [2] Producer.KafkaProducerApp
 ```
 
-### Qucik start (python)
+### Qucik start manually (python)
 
 ```bash
 # install python client library 
@@ -109,9 +109,9 @@ java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.KafkaCons
 ```
 </details>
 
-## Build 
+## Test 
 <details>
-<summary>Build</summary>
+<summary>Test</summary>
 
 ```bash
 sbt test
