@@ -101,10 +101,18 @@ sbt assembly
 # [success] Total time: 1 s, completed S
 
 # run the app via compiled jar
-# app 1 
+
+# producer 1 
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Producer.KafkaProducerApp
-# app 2 
+
+# producer 2
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar Producer.KafkaProducerApple
+
+# consumer 1
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.KafkaConsumerSubscribeApp
+
+# consumer 2
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.ScalaConsumerExample
 
 ```
 </details>
