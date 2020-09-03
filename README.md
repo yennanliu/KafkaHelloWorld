@@ -13,23 +13,7 @@
 	- k8s
 
 ## Todo 
-
-<details>
-<summary>Todo</summary>
-
-- Infra
-- Kafka clusters infra code
-- Kafka producer
-- Kafka consumer
-- Kafka broker
-- Kafka group
-- Kafka topic
-- Kafka shift
-- Kafka - spark
-- Kafka - DB
-- kafka-schema-registry
-
-</details>
+- [todo.md](https://github.com/yennanliu/KafkaHelloWorld/blob/master/doc/todo.md)
 
 ## Prerequisites
 
@@ -123,6 +107,16 @@ java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Producer.KafkaProd
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.KafkaConsumerSubscribeApp
 
 ```
+</details>
+
+## Build 
+<details>
+<summary>Build</summary>
+
+```bash
+sbt test
+```
+
 </details>
 
 ## Ref
