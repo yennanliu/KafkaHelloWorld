@@ -152,5 +152,8 @@ sbt test
 - https://sparkbyexamples.com/kafka/apache-kafka-consumer-producer-in-scala/ 
 - project dependency
 	- https://github.com/confluentinc/kafka-streams-examples/blob/6f24c506ca79dcf3c9695efd37a9253676176388/pom.xml
+
+- Kafka with spark-streaming
+	- https://ithelp.ithome.com.tw/articles/10188798
 	
 </details>	
