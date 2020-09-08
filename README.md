@@ -86,6 +86,15 @@ sbt run
 #  [2] Producer.KafkaProducerApp
 ```
 
+```bash
+# send file as kafka stream
+# run
+# 1) launch consumer 
+kafka-console-consumer  --bootstrap-server  127.0.0.1:9092 --topic orders 
+# 2) send stream
+bash script/streamOrders.sh
+```
+
 ### Qucik start manually (python)
 
 ```bash

@@ -1,7 +1,13 @@
 #!/bin/bash
-##########################################################
-# read lorders.txt and send to Kafka as stream
-##########################################################
+############################################################################
+# read  data/orders.txt and send to Kafka as stream
+#
+# run
+# 1) launch consumer 
+# kafka-console-consumer   --bootstrap-server  127.0.0.1:9092 --topic orders 
+# 2) send stream
+# bash script/streamOrders.sh
+############################################################################
 
 # https://github.com/spark-in-action/first-edition/blob/master/ch06/streamOrders.sh
 # https://ithelp.ithome.com.tw/articles/10188761
@@ -18,4 +24,4 @@ fi
 cat data/orders.txt | while read line; do
         echo "$line"
         sleep 0.1
-done | /opt/kafka_2.11-0.8.2.1/bin/kafka-console-producer.sh --broker-list $BROKER --topic $TOPIC 
+done | /usr/local/opt/kafka/bin/kafka-console-producer --broker-list $BROKER --topic $TOPIC 
