@@ -57,7 +57,8 @@ class KafkaConsumerApp2(val zookeeper: String,
   }
 }
 
-object KafkaConsumerApp2 extends App {      
-  val example = new KafkaConsumerApp2("localhost:9092", "group1", "test_topic")
+object KafkaConsumerApp2 extends App {
+  val topic = "orders"
+  val example = new KafkaConsumerApp2("localhost:9092", "group1", topic)
   example.run()
 }

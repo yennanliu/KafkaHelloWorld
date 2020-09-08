@@ -12,11 +12,11 @@ object ScalaProducerExample extends App {
   val brokers = args(2)
   val rnd = new Random()
   val props = new Properties()
+  
   props.put("bootstrap.servers", brokers)
   props.put("client.id", "ScalaProducerExample")
   props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
   props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
-
 
   val producer = new KafkaProducer[String, String](props)
   val t = System.currentTimeMillis()

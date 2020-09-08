@@ -140,6 +140,9 @@ java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.KafkaCons
 # consumer 2
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.ScalaConsumerExample
 
+# consumer 3
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.KafkaConsumerApp2
+
 ```
 </details>
 
