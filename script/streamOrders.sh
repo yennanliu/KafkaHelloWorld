@@ -24,4 +24,5 @@ fi
 cat data/orders.txt | while read line; do
         echo "$line"
         sleep 0.1
+# please check where kafka-console-producer is in your machine, and modify below code 
 done | /usr/local/opt/kafka/bin/kafka-console-producer --broker-list $BROKER --topic $TOPIC 
