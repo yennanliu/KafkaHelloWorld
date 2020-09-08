@@ -1,4 +1,4 @@
-package com.colobu.kafka;
+package partitioner;
 
 
 import kafka.utils.VerifiableProperties;
