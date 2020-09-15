@@ -109,9 +109,8 @@ sbt assembly
 # [info] Strategy 'discard' was applied to 3 files (Run the task at debug level to see details)
 # [info] Assembly up to date: /Users/yennanliu/KafkaHelloWorld/target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar
 # [success] Total time: 1 s, completed S
-
-# run the app via compiled jar
-
+```
+```bash
 # producer 1 
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Producer.KafkaProducerApp
 
@@ -121,6 +120,10 @@ java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar Producer.KafkaProduc
 # producer 3
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar Producer.KafkaProducerApp2
 
+# producer 4
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar Producer.KafkaProducerApp3
+```
+```bash
 # consumer 1
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.KafkaConsumerSubscribeApp
 

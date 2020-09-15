@@ -24,3 +24,6 @@ checkpoints/
 derby.log
 metastore_db/
 data/orders.txt
+
+# IntelliJ
+.idea/

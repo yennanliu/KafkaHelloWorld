@@ -13,6 +13,8 @@
 	- kafka-schema-registry
 	- kafka-schema-evolution
 	- kafka monitor (data count...)
+	- kafka partitoning
+	- kafka offset
 - Kafka app 
 	- Kafka producer
 	- Kafka consumer
