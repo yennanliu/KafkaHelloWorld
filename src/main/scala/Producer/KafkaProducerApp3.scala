@@ -5,6 +5,9 @@ package Producer
 import java.util.Properties
 import org.apache.kafka.clients.producer._
 
+//UDF
+//import com.partitioner.PartitionerApp1
+
 object KafkaProducerApp3 extends App {
 
   val props = new Properties()
@@ -12,7 +15,7 @@ object KafkaProducerApp3 extends App {
   props.put("bootstrap.servers", "localhost:9092,localhost:9093")
   props.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer")
   props.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer")
-  //props.put("partitioner.class", "com.Partitioner.CustomPartitioner")
+  //props.put("partitioner.class", "com.Partitioner.PartitionerApp1")
 
   val producer = new KafkaProducer[String, String](props)
 
