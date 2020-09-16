@@ -1,20 +1,6 @@
 ## Todo
 
-
-### todo 20200903
-- Infra (infra as code)
-	- kafka clusters
-	- kafka deployment
-	- CI/CD
-- Kafka - spark
-	- spark batch
-	- spark streaming
-- Kafka OP
-	- kafka-schema-registry
-	- kafka-schema-evolution
-	- kafka monitor (data count...)
-	- kafka partitoning
-	- kafka offset
+### todo 20200917
 - Kafka app 
 	- Kafka producer
 	- Kafka consumer
@@ -22,5 +8,29 @@
 	- Kafka group
 	- Kafka topic
 	- Kafka shift
+- Kafka OP
+	- kafka-schema-registry
+	- kafka-schema-evolution
+	- kafka monitor (data count...)
+	- kafka partitoning
+	- kafka offset
+- Infra (infra as code)
+	- kafka clusters
+	- kafka deployment
+	- CI/CD
+- Kafka - spark
+	- spark batch
+	- spark streaming
 - Kafka - DB
 - Kafka - Kafka
+- Scenario
+	- mysql logging to kafka
+	- Synchronous / asynchronous send to kafka
+	- Serialization / Deserialization
+	- compress message / topic
+	- index
+	- backup
+	- error handling
+	- Kafka connect
+	- data mirror - MirrorMaker
+	- monitor
