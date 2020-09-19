@@ -21,6 +21,13 @@
 <details>
 <summary>Prerequisites</summary>
 
+- env
+	- Java JDK 1.8
+	- Kafka zookeeper
+	- sbt
+	- Scala
+	- IntelliJ
+
 ```bash
 # install Java, kafka, zookeeper
 brew install kafka
@@ -100,6 +107,8 @@ python python/consumer_demo.py
 <summary>Build</summary>
 
 ```bash 
+sbt compile
+
 sbt assembly
 # [info] Run completed in 31 milliseconds.
 # [info] Total number of tests run: 0
