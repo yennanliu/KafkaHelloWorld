@@ -8,6 +8,12 @@ val sparkVersion = "2.3.0"
 
 resolvers += Resolver.sonatypeRepo("snapshots")
 
+lazy val versions = new {
+  val jodaConvert = "2.1"
+  val jodaTime = "2.9.3"
+  val log4j = "1.2.17"
+}
+
 libraryDependencies ++= Seq(
   // config
   "com.typesafe" % "config" % "1.2.1",
@@ -21,8 +27,19 @@ libraryDependencies ++= Seq(
   //"org.slf4j" % "slf4j-api" % "1.7.25",
 
   // test
-  "org.scalatest" %% "scalatest" % "3.1.1" % "test"
+  "org.scalatest" %% "scalatest" % "3.1.1" % "test",
 
+  // time transform
+  "joda-time" % "joda-time" % versions.jodaTime,
+  "org.joda" % "joda-convert" % versions.jodaConvert,
+
+  // log
+  "log4j" % "log4j" % versions.log4j,
+  "log4j" % "apache-log4j-extras" % versions.log4j,
+
+  // json
+  "org.json4s" %% "json4s-native" % "3.2.11",
+  "org.json4s" %% "json4s-jackson" % "3.2.11"
 )
 
 conflictManager := ConflictManager.latestRevision
