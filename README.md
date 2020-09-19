@@ -115,7 +115,7 @@ sbt assembly
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Producer.KafkaProducerApp
 
 # producer 2
-java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar Producer.KafkaProducerApple
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar Producer.KafkaAlwaysRunProducer
 
 # producer 3
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar Producer.KafkaProducerApp2
