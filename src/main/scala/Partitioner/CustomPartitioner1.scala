@@ -8,13 +8,19 @@ import org.apache.kafka.common.utils.Utils
 import org.apache.kafka.clients.producer.Partitioner
 import org.apache.kafka.common.Cluster
 
-class PartitionerApp1 extends Partitioner {
+class CustomPartitioner1 extends Partitioner {
 
   val departmentName = "IT"
   override def configure(configs: util.Map[String, _]): Unit = {}
   override def partition(topic: String,key: Any, keyBytes: Array[Byte], value: Any,valueBytes: Array[Byte],cluster: Cluster): Int = {
-    val partitions = cluster.partitionsForTopic(topic)
+
+    // hardcode here, need to fix
+    val partitions = List("abc", "def", "ghi", "jkl", "mno")
+    //val partitions = cluster.partitionsForTopic(topic)
     val numPartitions = partitions.size
+
+    println(s"*** partitions : $partitions")
+    println(s"*** numPartitions : $numPartitions")
 
     val it = Math.abs(numPartitions * 0.4).asInstanceOf[Int]
 

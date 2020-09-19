@@ -15,18 +15,18 @@ object KafkaProducerApp3 extends App {
   props.put("bootstrap.servers", "localhost:9092,localhost:9093")
   props.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer")
   props.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer")
-  //props.put("partitioner.class", "com.Partitioner.PartitionerApp1")
+  props.put("partitioner.class", "Partitioner.CustomPartitioner1")
 
   val producer = new KafkaProducer[String, String](props)
 
   try {
-    for (i <- 0 to 5) {
+    for (i <- 2 to 10) {
       val record = new ProducerRecord[String, String](topicName,"IT" + i,"My Site is yen.com " + i)
       println(record)
       producer.send(record)
     }
 
-    for (i <- 0 to 5) {
+    for (i <- 2 to 10) {
       val record = new ProducerRecord[String, String](topicName,"COMP" + i,"My Site is yen.com " + i)
       println(record)
       producer.send(record)

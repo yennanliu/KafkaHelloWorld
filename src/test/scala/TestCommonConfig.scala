@@ -12,8 +12,8 @@ class TestCommonConfig extends AnyFunSuite {
   val kafka_consumer = CommonConfig.kafka_consumer
 
   test("kafka default config should as the one in application.conf") {
-    assert(kafka_user == "kafka_user")
-    assert(kafka_topic == "kafka_topic")
-    assert(kafka_consumer == "kafka_consumer")
+    assert(kafka_user == "default_user")
+    assert(kafka_topic == "default_topic")
+    assert(kafka_consumer == "default_consumer")
   }
 }
