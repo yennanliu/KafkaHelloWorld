@@ -1,4 +1,4 @@
-package Producer
+package SimpleProducerConsumer
 
 // https://ithelp.ithome.com.tw/articles/10188761
 // ProducerRecord is the new API of KeyedMessage

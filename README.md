@@ -174,6 +174,12 @@ sbt test
 - Step 3
 	- merge to master
 
+- Kafka location
+	- `/usr/local/etc/kafka`
+
+- zookeeper location
+	- `/usr/local/etc/zookeeper`
+	
 </details>
 
 ## Ref
