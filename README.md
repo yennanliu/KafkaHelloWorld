@@ -48,10 +48,68 @@ brew services stop kafka
 
 </details>
 
+## Build 
+
+<details>
+<summary>Build</summary>
+
+```bash 
+sbt compile
+
+sbt assembly
+# [info] Run completed in 31 milliseconds.
+# [info] Total number of tests run: 0
+# [info] Suites: completed 0, aborted 0
+# [info] Tests: succeeded 0, failed 0, canceled 0, ignored 0, pending 0
+# [info] No tests were executed.
+# [info] Strategy 'discard' was applied to 3 files (Run the task at debug level to see details)
+# [info] Assembly up to date: /Users/yennanliu/KafkaHelloWorld/target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar
+# [success] Total time: 1 s, completed S
+```
+
+</details>
+
 ## Quick-Start 
 
 <details>
 <summary>Qucik start</summary>
+
+### Qucik start (scala)
+
+```bash 
+# run per category
+# producer 
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar SimpleProducerConsumer.Producer
+# consumer
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar SimpleProducerConsumer.Consumer
+
+```
+
+```bash
+# run per script 
+# producer 1 
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Producer.KafkaProducerApp
+
+# producer 2
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar Producer.KafkaProducerApple
+
+# producer 3
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar Producer.KafkaProducerApp2
+
+# producer 4
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar Producer.KafkaProducerApp3
+```
+```bash
+# consumer 1
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.KafkaConsumerSubscribeApp
+
+# consumer 2
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.ScalaConsumerExample
+
+# consumer 3
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.KafkaConsumerApp2
+
+```
 
 ### Qucik start manually (scala)
 
@@ -100,49 +158,6 @@ python python/producer_demo.py
 python python/consumer_demo.py
 ```
 
-</details>
-
-## Build 
-<details>
-<summary>Build</summary>
-
-```bash 
-sbt compile
-
-sbt assembly
-# [info] Run completed in 31 milliseconds.
-# [info] Total number of tests run: 0
-# [info] Suites: completed 0, aborted 0
-# [info] Tests: succeeded 0, failed 0, canceled 0, ignored 0, pending 0
-# [info] No tests were executed.
-# [info] Strategy 'discard' was applied to 3 files (Run the task at debug level to see details)
-# [info] Assembly up to date: /Users/yennanliu/KafkaHelloWorld/target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar
-# [success] Total time: 1 s, completed S
-```
-```bash
-# producer 1 
-java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Producer.KafkaProducerApp
-
-# producer 2
-java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar Producer.KafkaProducerApple
-
-# producer 3
-java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar Producer.KafkaProducerApp2
-
-# producer 4
-java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar Producer.KafkaProducerApp3
-```
-```bash
-# consumer 1
-java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.KafkaConsumerSubscribeApp
-
-# consumer 2
-java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.ScalaConsumerExample
-
-# consumer 3
-java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.KafkaConsumerApp2
-
-```
 </details>
 
 ## Test 
