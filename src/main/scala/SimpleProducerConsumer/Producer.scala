@@ -1,31 +1,37 @@
-package SimpleProducerConsumer
+package Producer
 
-import java.util.Properties
-import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
+// https://ithelp.ithome.com.tw/articles/10188761
+// ProducerRecord is the new API of KeyedMessage
+// https://stackoverflow.com/questions/35984247/what-is-the-difference-between-kafka-producerrecord-and-keyedmessage
 
-object Producer extends App {
+import org.apache.kafka.clients.producer.{ProducerRecord, Producer, ProducerConfig, KafkaProducer}
+import java.util.{Date, Properties}
+import scala.util.Random
 
-  val props:Properties = new Properties()
-  props.put("bootstrap.servers","localhost:9092")
-  props.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer")
-  props.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer")
+object Producer extends App{
+
+  val topic = "test_topic"
+  val brokers = "localhost:9092"
+  val rnd = new Random()
+
+  val props = new Properties()
+  props.put("bootstrap.servers", brokers)
+  props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
+  props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
+  //  acks could = 0, 1, or all : https://docs.confluent.io/current/installation/configuration/producer-configs.html
   props.put("acks","all")
 
+  println(s"*** running producer, topic = $topic")
   val producer = new KafkaProducer[String, String](props)
-  val topic = "simple_topic"
 
-  try {
-    for (i <- 0 to 30) {
-      val record = new ProducerRecord[String, String](topic, i.toString, "My Site is sparkbyexamples.com " + i)
-      val metadata = producer.send(record)
-      printf(s"sent record(key=%s value=%s) " + "meta(partition=%d, offset=%d)\n",
-        record.key(), record.value(), 
-        metadata.get().partition(),
-        metadata.get().offset())
-    }
-  }catch{
-    case e:Exception => e.printStackTrace()
-  }finally {
-    producer.close()
+  for (nEvents <- Range(0, 1000)){
+    val runtime = new Date().getTime()
+    val ip = "192.168.2." + rnd.nextInt(255)
+    val msg = runtime + "," + nEvents + ",www.example.com," + ip
+    val data = new ProducerRecord[String, String](topic, ip, msg)
+    println("sending data to kafka : " + data)
+    producer.send(data)
+
   }
+  producer.close()
 }

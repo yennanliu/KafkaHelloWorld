@@ -10,13 +10,15 @@ import scala.collection.JavaConversions._
 
 object Consumer extends App {
   val topic = "simple_topic"
-  val example = new ConsumerApp("localhost:9092", "group1", topic)
+  val group_id = "group1"
+  val example = new ConsumerApp("localhost:9092", group_id, topic)
+  println(s"*** running consumer, topic = $topic, group_id = $group_id")
   example.run()
 }
 
 class ConsumerApp(val zookeeper: String,
-               val groupId: String,
-               val topic: String) extends Logging {
+             val groupId: String,
+             val topic: String) extends Logging {
 
   val config = createConsumerConfig(zookeeper, groupId)
   val consumer = new KafkaConsumer[String, String](config)
@@ -44,7 +46,7 @@ class ConsumerApp(val zookeeper: String,
   def run() = {
     consumer.subscribe(Collections.singletonList(this.topic))
 
-    Executors.newSingleThreadExecutor.execute(    new Runnable {
+    Executors.newSingleThreadExecutor.execute( new Runnable {
       override def run(): Unit = {
         while (true) {
           val records = consumer.poll(1000)
