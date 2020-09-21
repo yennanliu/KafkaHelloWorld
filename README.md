@@ -100,6 +100,7 @@ java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar Producer.KafkaProduc
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar Producer.KafkaProducerApp3
 ```
 ```bash
+# run per script 
 # consumer 1
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.KafkaConsumerSubscribeApp
 
