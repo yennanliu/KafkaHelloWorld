@@ -25,7 +25,11 @@ libraryDependencies ++= Seq(
   "org.apache.kafka" %% "kafka" % "2.1.1",
   "org.apache.kafka" % "kafka-streams" % "2.1.1",
 
-  // depedency 
+  // zookeeper
+  // "org.apache.curator" % "curator-recipes" % "4.2.0",
+  // "org.apache.curator" % "curator-test" % "4.2.0" % Test,
+
+  // depedency
   "org.slf4j" % "slf4j-api" % "1.7.25",
   "org.slf4j" % "slf4j-simple" % "1.7.25" % Test,
 
