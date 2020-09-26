@@ -18,7 +18,8 @@ class WordCountTestableSpec extends FlatSpec with Matchers with KafkaTestSetup {
     val words = "Hello, WORLDY, World worlD Test"
     driver.pipeInput(recordFactory.create(words))
     val record: ProducerRecord[String, String] = driver.readOutput("output-topic", new StringDeserializer(), new StringDeserializer())
-    record.value() shouldBe words.toLowerCase
+    //record.value() shouldBe words.toLowerCase
+    assert (record.value() ==  words.toLowerCase)
     driver.close()
   }
 
@@ -28,13 +29,17 @@ class WordCountTestableSpec extends FlatSpec with Matchers with KafkaTestSetup {
     val words = "Hello Kafka Streams, All streams lead to Kafka"
     driver.pipeInput(recordFactory.create(words))
     val store: KeyValueStore[String, java.lang.Long] = driver.getKeyValueStore("counts-store")
-    store.get("hello") shouldBe 1
-    store.get("kafka") shouldBe 2
-    store.get("streams") shouldBe 2
-    store.get("lead") shouldBe 1
-    store.get("to") shouldBe 1
+    // store.get("hello") shouldBe 1
+    // store.get("kafka") shouldBe 2
+    // store.get("streams") shouldBe 2
+    // store.get("lead") shouldBe 1
+    // store.get("to") shouldBe 1
+    assert (store.get("hello")  ==  1)
+    assert (store.get("kafka")  ==  2)
+    assert (store.get("streams")  ==  2)
+    assert (store.get("lead")  ==  1)
+    assert (store.get("to")  ==  1)
     driver.close()
-
   }
 
 }
