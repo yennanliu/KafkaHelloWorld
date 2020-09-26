@@ -1,4 +1,4 @@
-package KafkaHelloWorld
+package testing
 
 import org.scalatest.funsuite.AnyFunSuite
 // UDF

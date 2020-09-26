@@ -1,5 +1,3 @@
-
-
 name := "KafkaHelloWorld"
 
 version := "1.0"
