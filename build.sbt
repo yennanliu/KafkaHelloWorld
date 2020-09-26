@@ -36,7 +36,8 @@ libraryDependencies ++= Seq(
 
   // test
   "org.scalatest" %% "scalatest" % "3.1.1" % "test",
-
+  "org.apache.kafka" % "kafka-streams-test-utils" % "2.1.0" % "test",
+  
   // time transform
   "joda-time" % "joda-time" % versions.jodaTime,
   "org.joda" % "joda-convert" % versions.jodaConvert,
