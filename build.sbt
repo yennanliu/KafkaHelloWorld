@@ -25,6 +25,9 @@ libraryDependencies ++= Seq(
   "org.apache.kafka" %% "kafka" % "2.1.1",
   "org.apache.kafka" % "kafka-streams" % "2.1.1",
 
+  // kafka-stream
+  "org.apache.kafka" %% "kafka-streams-scala" % "2.1.0",
+
   // zookeeper
   // "org.apache.curator" % "curator-recipes" % "4.2.0",
   // "org.apache.curator" % "curator-test" % "4.2.0" % Test,

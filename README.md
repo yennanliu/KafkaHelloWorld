@@ -74,16 +74,39 @@ sbt assembly
 <details>
 <summary>Qucik start</summary>
 
-### Qucik start (scala)
+### Qucik start - per category (scala)
 
 ```bash 
-# run per category
 # producer 
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar SimpleProducerConsumer.Producer
 # consumer
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar SimpleProducerConsumer.Consumer
 
 ```
+
+```bash
+# KafkaStream - wordcount
+# create a topic
+kafka-topics --create -zookeeper localhost:2181 --replication-factor 1  --partitions 1 --topic text_lines
+# make toy data 
+echo -e "doo dooey do dodah\ndoo dooey do dodah\ndoo dooey do dodah \n 123 456 123" > data/words.txt
+# run the kafkastream workcount script
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar KafkaStream.WordCount
+# send it to kafka
+cat data/words.txt | kafka-console-producer --broker-list localhost:9092 --topic text_lines
+
+# check the output
+kafka-console-consumer --bootstrap-server localhost:9092 \
+--topic word_count_results \
+--from-beginning \
+--formatter kafka.tools.DefaultMessageFormatter \
+--property print.key=true \
+--property key.deserializer=org.apache.kafka.common.serialization.StringDeserializer \
+--property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer
+
+```
+
+### Qucik start - per script (scala)
 
 ```bash
 # run per script 
@@ -143,7 +166,7 @@ sbt run
 # send file as kafka stream
 # run
 # 1) launch consumer 
-kafka-console-consumer  --bootstrap-server  127.0.0.1:9092 --topic orders 
+kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic orders 
 # 2) send stream
 bash script/streamOrders.sh
 ```
