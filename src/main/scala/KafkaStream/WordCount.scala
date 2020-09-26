@@ -17,10 +17,14 @@ object WordCount extends App {
 
   import Serdes._
 
+  val outputTopic = "word_count_results"
+  val applicationIdConfig = "wordcount-modified"
+  val bootstrapServer = "localhost:9092"
+
   val props: Properties = {
     val p = new Properties()
-    p.put(StreamsConfig.APPLICATION_ID_CONFIG, "wordcount-modified")
-    p.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
+    p.put(StreamsConfig.APPLICATION_ID_CONFIG, applicationIdConfig)
+    p.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServer)
     p
   }
 
@@ -33,7 +37,7 @@ object WordCount extends App {
     .flatMapValues(textLine => textLine.toLowerCase.split("\\W+"))
     .groupBy((_, word) => word)
     .count()
-  wordCounts.toStream.to("word_count_results")
+  wordCounts.toStream.to(outputTopic)
 
   val streams: KafkaStreams = new KafkaStreams(builder.build(), props)
   streams.start()
