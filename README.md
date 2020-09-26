@@ -74,14 +74,13 @@ sbt assembly
 <details>
 <summary>Qucik start</summary>
 
-### Qucik start - per category (scala)
+### Qucik start - per category (Scala)
 
 ```bash 
 # producer 
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar SimpleProducerConsumer.Producer
 # consumer
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar SimpleProducerConsumer.Consumer
-
 ```
 
 ```bash
@@ -103,10 +102,9 @@ kafka-console-consumer --bootstrap-server localhost:9092 \
 --property print.key=true \
 --property key.deserializer=org.apache.kafka.common.serialization.StringDeserializer \
 --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer
-
 ```
 
-### Qucik start - per script (scala)
+### Qucik start - per script (Scala)
 
 ```bash
 # run per script 
@@ -132,10 +130,9 @@ java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.ScalaCons
 
 # consumer 3
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar   Consumer.KafkaConsumerApp2
-
 ```
 
-### Qucik start manually (scala)
+### Qucik start manually (Scala)
 
 ```bash
 # create kafka topic
@@ -171,15 +168,15 @@ kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic orders
 bash script/streamOrders.sh
 ```
 
-### Qucik start manually (python)
+### Qucik start manually (Python)
 
 ```bash
 # install python client library 
 pip3 install -r requirements.txt
 # produce event 
-python python/producer_demo.py
+python src/main/python/producer_demo.py
 # consume event 
-python python/consumer_demo.py
+python src/main/python/consumer_demo.py
 ```
 
 </details>
