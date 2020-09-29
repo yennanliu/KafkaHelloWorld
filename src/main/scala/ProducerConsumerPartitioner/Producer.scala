@@ -7,11 +7,12 @@ object Producer extends App {
 
   val props = new Properties()
   val topic = "test_topic_2"
-  
+
+  // https://kafka.apache.org/20/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html
   props.put("bootstrap.servers", "localhost:9092,localhost:9093")
   props.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer")
   props.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer")
-  props.put("ProducerConsumerPartitioner.class", "Partitioner.Partitioner_")
+  props.put("partitioner.class", "ProducerConsumerPartitioner.Partitioner_")
 
   val producer = new KafkaProducer[String, String](props)
 
