@@ -1,4 +1,4 @@
-package Producer
+package ProducerUtils
 
 import java.util.Properties
 import org.apache.kafka.clients.producer.{Callback, RecordMetadata, ProducerRecord, KafkaProducer}
@@ -6,15 +6,15 @@ import scala.concurrent.Promise
 
 // https://gist.github.com/ryandavidhartman/2285de4bd13a11d8d2e8
 
-class AsyncSyncProducer(topic: String, brokerList:String, sync: Boolean) {
+case class AsyncSyncProducer(topic: String, brokerList:String, sync: Boolean){
   val props = new Properties()
 
-  props.put("bootstrap.servers", "localhost:9092,localhost:9093")
+  //props.put("bootstrap.servers", "localhost:9092,localhost:9093")
+  props.put("bootstrap.servers", "localhost:9092")
   props.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer")
   props.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer")
-  props.put("partitioner.class", "ProducerConsumerPartitioner.Partitioner_")
   props.put("acks", "1")
-  //props.put("produer.type", if(sync) "sync" else "async")
+  props.put("produer.type", if(sync) "sync" else "async")
 
   // how many times to retry when produce request fails?
   props.put("retries", "3")
@@ -29,6 +29,7 @@ class AsyncSyncProducer(topic: String, brokerList:String, sync: Boolean) {
 
   // sync sending
   def sendSync(value: String): Unit = {
+    println("sendSync ...")
     val record = new ProducerRecord[String, String](topic, value)
     try{
       producer.send(record).get()
@@ -43,6 +44,7 @@ class AsyncSyncProducer(topic: String, brokerList:String, sync: Boolean) {
 
   // async sending
   def sendAsync(value: String): Unit = {
+    println("sendAsync ...")
     val record = new ProducerRecord[String, String](topic, value)
     val p = Promise[(RecordMetadata, Exception)]()
     producer.send(record, new Callback {
