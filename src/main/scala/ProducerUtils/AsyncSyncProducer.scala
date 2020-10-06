@@ -13,6 +13,8 @@ case class AsyncSyncProducer(topic: String, brokerList:String, sync: Boolean){
   props.put("bootstrap.servers", "localhost:9092")
   props.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer")
   props.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer")
+  // acks = 0, 1, or all 
+  // https://medium.com/better-programming/kafka-acks-explained-c0515b3b707e
   props.put("acks", "1")
   props.put("produer.type", if(sync) "sync" else "async")
 
