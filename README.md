@@ -229,5 +229,9 @@ sbt test
 
 - Kafka with spark-streaming
 	- https://ithelp.ithome.com.tw/articles/10188798
+
+- Kafaka schema management
+	- https://docs.confluent.io/current/schema-registry/index.html
+	- https://www.madewithtea.com/posts/kafka-streams-in-scala-with-schema-registry
 	
 </details>	
