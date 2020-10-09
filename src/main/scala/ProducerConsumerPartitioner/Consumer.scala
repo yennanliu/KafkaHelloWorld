@@ -6,7 +6,7 @@ import scala.collection.JavaConverters._
 
 object Consumer extends App {
 
-  val topic = "test_topic_2"
+  val topic = "topic_ProducerConsumerPartitioner"
   val group_id = "group1"
   val brokers = "localhost:9092"
 

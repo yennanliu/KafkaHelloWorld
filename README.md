@@ -23,8 +23,9 @@
 
 - env
 	- Java JDK 1.8
-	- Kafka zookeeper
-	- sbt
+	- Kafka 
+	- Zookeeper
+	- sbt 1.3.12 
 	- Scala
 	- IntelliJ
 
@@ -76,6 +77,7 @@ sbt assembly
 
 ### Qucik start - per category (Scala)
 
+- SimpleProducerConsumer
 ```bash 
 # producer 
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar SimpleProducerConsumer.Producer
@@ -83,6 +85,7 @@ java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar SimpleProducerConsum
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar SimpleProducerConsumer.Consumer
 ```
 
+- WordCount
 ```bash
 # KafkaStream - wordcount
 # create a topic
@@ -102,6 +105,36 @@ kafka-console-consumer --bootstrap-server localhost:9092 \
 --property print.key=true \
 --property key.deserializer=org.apache.kafka.common.serialization.StringDeserializer \
 --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer
+```
+
+- ProducerConsumerPartitioner
+```bash 
+# create the topic
+kafka-topics --create -zookeeper localhost:2181 --replication-factor 1  --partitions 1 --topic topic_ProducerConsumerPartitioner
+
+# run the consumer
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar ProducerConsumerPartitioner.Consumer
+
+# run the producer
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar ProducerConsumerPartitioner.Producer
+
+# check the result
+kafka-topics --create -zookeeper localhost:2181 --replication-factor 1  --partitions 1 --topic topic_ProducerConsumerPartitioner
+```
+
+- AsyncProducerConsumer
+```bash
+# create the topic
+kafka-topics --create -zookeeper localhost:2181 --replication-factor 1  --partitions 1 --topic topic_AsyncProducerConsumer
+
+# run the consumer
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar AsyncProducerConsumer.ConsumerRunner
+
+# run the producer
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar ProducerConsumerPartitioner.ProducerRunner
+
+# check the result
+kafka-topics --create -zookeeper localhost:2181 --replication-factor 1  --partitions 1 --topic topic_AsyncProducerConsumer
 ```
 
 ### Qucik start - per script (Scala)

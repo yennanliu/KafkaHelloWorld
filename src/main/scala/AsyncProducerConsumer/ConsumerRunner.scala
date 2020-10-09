@@ -6,7 +6,7 @@ import scala.collection.JavaConverters._
 
 object ConsumerRunner extends App {
 
-  val topic = "async_topic"
+  val topic = "topic_AsyncProducerConsumer"
   val group_id = "group1"
   val brokers = "localhost:9092"
 

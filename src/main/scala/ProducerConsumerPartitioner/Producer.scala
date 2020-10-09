@@ -6,7 +6,7 @@ import org.apache.kafka.clients.producer._
 object Producer extends App {
 
   val props = new Properties()
-  val topic = "test_topic_2"
+  val topic = "topic_ProducerConsumerPartitioner"
 
   // https://kafka.apache.org/20/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html
   props.put("bootstrap.servers", "localhost:9092,localhost:9093")

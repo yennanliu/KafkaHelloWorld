@@ -12,7 +12,7 @@ import ProducerUtils.AsyncSyncProducer
 object ProducerRunner extends App{
 
   val props = new Properties()
-  val k_topic = "async_topic"
+  val k_topic = "topic_AsyncProducerConsumer"
   val brokerList = "localhost:9092"
 
   props.put("bootstrap.servers", "localhost:9092")
