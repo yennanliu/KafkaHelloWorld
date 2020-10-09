@@ -12,23 +12,23 @@ import ProducerUtils.AsyncSyncProducer
 object ProducerRunner extends App{
 
   val props = new Properties()
-  val topic = "async_topic"
+  val k_topic = "async_topic"
   val brokerList = "localhost:9092"
 
   props.put("bootstrap.servers", "localhost:9092")
   props.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer")
   props.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer")
 
-  val sync:Boolean = false
+  val sync:Boolean = true
 
-  val producer = AsyncSyncProducer.apply(topic, brokerList, sync)
+  val async_producer = AsyncSyncProducer.apply(k_topic, brokerList, sync)
 
   try{
     for (i <- 2 to 20){
       //val record = new ProducerRecord[String, String](topic,"IT_" + i,"My Site is yen.com " + i)
       val record:String = s"hola ! this is my $i msg !!!"
       println(record)
-      producer.send(record)
+      async_producer.send(record)
     }
   } catch {
     case e:Exception => e.printStackTrace()
