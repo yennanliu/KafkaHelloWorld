@@ -1,7 +1,10 @@
-# KafkaHelloWorld
+<h1 align="center">KafkaHelloWorld</h1>
+<h4 align="center">Kafka app/infra POC project</h4>
+
+<p align="center">
 
 ## INTRO
-- Kafka `basic op` demo via programming language
+- programming language
 	- Scala
 	- Java
 	- Python
@@ -54,26 +57,21 @@ brew services stop kafka
 <details>
 <summary>Build</summary>
 
-```bash 
+```bash
+# sbt clean compile 
 sbt compile
 
 sbt assembly
-# [info] Run completed in 31 milliseconds.
-# [info] Total number of tests run: 0
-# [info] Suites: completed 0, aborted 0
-# [info] Tests: succeeded 0, failed 0, canceled 0, ignored 0, pending 0
-# [info] No tests were executed.
-# [info] Strategy 'discard' was applied to 3 files (Run the task at debug level to see details)
-# [info] Assembly up to date: /Users/yennanliu/KafkaHelloWorld/target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar
-# [success] Total time: 1 s, completed S
+# the build sbt jar should exist below
+# /target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar
 ```
 
 </details>
 
-## Quick-Start 
+## Run
 
 <details>
-<summary>Qucik start</summary>
+<summary>Run</summary>
 
 ### Qucik start - per category (Scala)
 
@@ -131,11 +129,18 @@ kafka-topics --create -zookeeper localhost:2181 --replication-factor 1  --partit
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar AsyncProducerConsumer.ConsumerRunner
 
 # run the producer
-java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar ProducerConsumerPartitioner.ProducerRunner
+java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar AsyncProducerConsumer.ProducerRunner
 
 # check the result
 kafka-topics --create -zookeeper localhost:2181 --replication-factor 1  --partitions 1 --topic topic_AsyncProducerConsumer
 ```
+
+</details>
+
+## Quick-Start 
+
+<details>
+<summary>Qucik start</summary>
 
 ### Qucik start - per script (Scala)
 
