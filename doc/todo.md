@@ -15,7 +15,7 @@
 	- kafka partitoning
 	- kafka offset
 - Infra (infra as code)
-	- kafka clusters
+	- kafka clusters (master, follower | master, follower, follower | master, master .. )
 	- kafka deployment
 	- CI/CD
 - Kafka - spark

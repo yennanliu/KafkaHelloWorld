@@ -274,5 +274,9 @@ sbt test
 	
 - Makefile ref 
 	- https://github.com/djangodeployment/django-deployment-book/blob/master/Makefile
+
+- Kafka Docker
+	- http://wurstmeister.github.io/kafka-docker/
+	- https://github.com/wurstmeister/kafka-docker
 	
 </details>	
