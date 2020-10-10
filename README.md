@@ -1,5 +1,5 @@
 <h1 align="center">KafkaHelloWorld</h1>
-<h4 align="center">Kafka app/infra POC project</h4>
+<h4 align="center">Kafka POC project that builds app & infa via various programming language for cases</h4>
 
 <p align="center">
 
@@ -271,5 +271,8 @@ sbt test
 - Kafaka schema management
 	- https://docs.confluent.io/current/schema-registry/index.html
 	- https://www.madewithtea.com/posts/kafka-streams-in-scala-with-schema-registry
+	
+- Makefile ref 
+	- https://github.com/djangodeployment/django-deployment-book/blob/master/Makefile
 	
 </details>	
