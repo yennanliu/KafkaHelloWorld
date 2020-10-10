@@ -22,7 +22,13 @@ ENV KAFKA_VERSION=$kafka_version \
 
 ENV PATH=${PATH}:${KAFKA_HOME}/bin
 
-COPY download-kafka.sh start-kafka.sh broker-list.sh create-topics.sh versions.sh /tmp/
+
+RUN git clone https://github.com/wurstmeister/kafka-docker.git
+#WORKDIR kafka-docker
+COPY kafka-docker/download-kafka.sh kafka-docker/start-kafka.sh kafka-docker/broker-list.sh kafka-docker/create-topics.sh kafka-docker/versions.sh /tmp/
+
+#COPY script/* .
+#COPY download-kafka.sh start-kafka.sh broker-list.sh create-topics.sh versions.sh /tmp/
 
 RUN apk add --no-cache bash curl jq docker \
  && chmod a+x /tmp/*.sh \
