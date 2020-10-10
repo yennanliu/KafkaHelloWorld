@@ -6,6 +6,10 @@ ARG glibc_version=2.31-r0
 ARG vcs_ref=unspecified
 ARG build_date=unspecified
 
+RUN apt-get update \
+    apt-get upgrade \
+    apt-get install git
+    
 LABEL org.label-schema.name="kafka" \
       org.label-schema.description="Apache Kafka" \
       org.label-schema.build-date="${build_date}" \
@@ -23,7 +27,7 @@ ENV KAFKA_VERSION=$kafka_version \
 ENV PATH=${PATH}:${KAFKA_HOME}/bin
 
 
-RUN https://github.com/wurstmeister/kafka-docker.git
+RUN git clone https://github.com/wurstmeister/kafka-docker.git
 #WORKDIR kafka-docker
 COPY kafka-docker/download-kafka.sh kafka-docker/start-kafka.sh kafka-docker/broker-list.sh kafka-docker/create-topics.sh kafka-docker/versions.sh /tmp/
 
