@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo '>>>> DOCKER BUILD...'
-docker build . -t kafka_env
+docker build services/scala/. -t kafka_env
 echo '>>>> RUN sbt test & sbt build...'
 docker run --mount \
 type=bind,\
