@@ -15,9 +15,10 @@
 	- Docker
 	- [Confluent](https://github.com/yennanliu/ConfluentHelloWorld)
 	- k8s
+- [kafka_intro](https://github.com/yennanliu/KafkaHelloWorld/blob/master/doc/kafka_intro.md)
 
 ## Todo 
-- [todo.md](https://github.com/yennanliu/KafkaHelloWorld/blob/master/doc/todo.md)
+- [todo](https://github.com/yennanliu/KafkaHelloWorld/blob/master/doc/todo.md)
 
 ## Prerequisites
 
