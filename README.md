@@ -262,6 +262,9 @@ sbt test
 <details>
 <summary>Ref</summary>
 
+- Confluent kafka official tutorial
+- https://kafka-tutorials.confluent.io/?utm_source=drift&utm_medium=digital&utm_campaign=ch.blog_type.community_content.kafka-tutorials
+
 - https://sparkbyexamples.com/kafka/apache-kafka-consumer-producer-in-scala/ 
 - project dependency
 	- https://github.com/confluentinc/kafka-streams-examples/blob/6f24c506ca79dcf3c9695efd37a9253676176388/pom.xml
