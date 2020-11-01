@@ -1,4 +1,3 @@
-
 package common
 
 import com.typesafe.config.{Config, ConfigFactory}
@@ -13,5 +12,4 @@ object CommonConfig{
     val kafka_user: String = config.getString("user")
     val kafka_topic: String = config.getString("topic")
     val kafka_consumer: String = config.getString("consumer")
-
 }

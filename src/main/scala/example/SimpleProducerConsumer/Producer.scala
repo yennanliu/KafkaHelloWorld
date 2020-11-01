@@ -18,7 +18,7 @@ object Producer extends App{
   props.put("bootstrap.servers", brokers)
   props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
   props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
-  //  acks could = 0, 1, or all : https://docs.confluent.io/current/installation/configuration/producer-configs.html
+  //  acks could be 0, 1, or -1 (all) : https://docs.confluent.io/current/installation/configuration/producer-configs.html
   props.put("acks","all")
 
   println(s"*** running producer, topic = $topic")
