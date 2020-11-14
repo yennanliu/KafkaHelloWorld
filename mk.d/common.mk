@@ -1,0 +1,10 @@
+help:
+	@echo "Please use \`make <target>' is one of"
+	@echo "  compile    run sbt compile"
+	@echo "  run        run sbt run"
+	@echo "  test       run sbt test"
+	@echo "  assembly   run sbt assembly"
+	@echo "  console    run sbt console"
+	@echo "  run_kz     run kafka & zookeeper"
+	@echo "  stop_kz    stop kafka & zookeeper"
+	@echo "  make_topic crate default topics"
