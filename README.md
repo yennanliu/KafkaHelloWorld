@@ -5,8 +5,8 @@
 
 ## INTRO
 - programming language
-	- Scala
-	- Java
+	- [Scala](https://github.com/yennanliu/KafkaHelloWorld/tree/master/src)
+	- [Java](https://github.com/yennanliu/KafkaHelloWorld/tree/master/KafkaJava), [examples](https://github.com/yennanliu/KafkaHelloWorld/tree/master/examples)
 	- Python
 	- Go
 
