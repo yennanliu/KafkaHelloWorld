@@ -1,4 +1,4 @@
-package java.Producer;
+package Producer;
 
 // https://kafka-tutorials.confluent.io/message-ordering/kafka.html
 
@@ -46,12 +46,12 @@ public class KafkaProducerApplication {
         producer.send(producerRecord,
                 (recordMetadata, e) -> {
                     if(e != null) {
-                       e.printStackTrace();
+                        e.printStackTrace();
                     } else {
-                      System.out.println("key/value " + key + "/" + value + "\twritten to topic[partition] " + recordMetadata.topic() + "[" + recordMetadata.partition() + "] at offset " + recordMetadata.offset());
+                        System.out.println("key/value " + key + "/" + value + "\twritten to topic[partition] " + recordMetadata.topic() + "[" + recordMetadata.partition() + "] at offset " + recordMetadata.offset());
                     }
                 }
-            );
+        );
     }
 
     public void shutdown() {
@@ -91,13 +91,13 @@ public class KafkaProducerApplication {
         try {
             List<String> linesToProduce = Files.readAllLines(Paths.get(filePath));
             linesToProduce.stream()
-                          .filter(l -> !l.trim().isEmpty())
-                          .forEach(producerApp::produce);
+                    .filter(l -> !l.trim().isEmpty())
+                    .forEach(producerApp::produce);
             System.out.println("Offsets and timestamps committed in batch from " + filePath);
         } catch (IOException e) {
             System.err.printf("Error reading file %s due to %s %n", filePath, e);
         } finally {
-          producerApp.shutdown();
+            producerApp.shutdown();
         }
     }
 }
