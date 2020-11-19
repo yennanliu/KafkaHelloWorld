@@ -118,7 +118,11 @@ java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar ProducerConsumerPart
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar ProducerConsumerPartitioner.Producer
 
 # check the result
-kafka-topics --create -zookeeper localhost:2181 --replication-factor 1  --partitions 1 --topic topic_ProducerConsumerPartitioner
+kafka-console-consumer --bootstrap-server localhost:9092 \
+--topic topic_ProducerConsumerPartitioner \
+--from-beginning \
+--formatter kafka.tools.DefaultMessageFormatter \
+--property print.key=true 
 ```
 
 - AsyncProducerConsumer
@@ -133,7 +137,11 @@ java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar AsyncProducerConsume
 java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar AsyncProducerConsumer.ProducerRunner
 
 # check the result
-kafka-topics --create -zookeeper localhost:2181 --replication-factor 1  --partitions 1 --topic topic_AsyncProducerConsumer
+kafka-console-consumer --bootstrap-server localhost:9092 \
+--topic topic_AsyncProducerConsumer \
+--from-beginning \
+--formatter kafka.tools.DefaultMessageFormatter \
+--property print.key=true 
 ```
 
 </details>
