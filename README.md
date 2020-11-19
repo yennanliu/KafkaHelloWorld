@@ -7,7 +7,7 @@
 - programming language
 	- [Scala](https://github.com/yennanliu/KafkaHelloWorld/tree/master/src)
 	- [Java](https://github.com/yennanliu/KafkaHelloWorld/tree/master/KafkaJava), [examples](https://github.com/yennanliu/KafkaHelloWorld/tree/master/examples)
-	- Python
+	- [Python](https://github.com/yennanliu/KafkaHelloWorld/tree/master/KafkaPython/src/main/python)
 	- Go
 
 - Kafka infra build
@@ -16,6 +16,25 @@
 	- [Confluent](https://github.com/yennanliu/ConfluentHelloWorld)
 	- k8s
 - [kafka_intro](https://github.com/yennanliu/KafkaHelloWorld/blob/master/doc/kafka_intro.md)
+
+## Structure
+```
+├── KafkaJava   : kafka `Java` project
+├── KafkaPython : kafka `Python` project
+├── Makefile    : help Makefile
+├── README.md  
+├── build.sbt   : scala build tool (sbt) config
+├── config      : kafka config (all project level)
+├── data        : toy data
+├── doc         : ref doc
+├── docker-compose.yml  : docker yml build mini dev system (kafka + zookeeper)
+├── examples    : kafka java project examples by cases
+├── mk.d        : sub Makefile
+├── project     : scala build tool (sbt) config
+├── script      : help bash scripts
+├── services    : docker yml build dev system by components
+├── src         : kafka `Scala` project (source code)
+```
 
 ## Todo 
 - [todo](https://github.com/yennanliu/KafkaHelloWorld/blob/master/doc/todo.md)
