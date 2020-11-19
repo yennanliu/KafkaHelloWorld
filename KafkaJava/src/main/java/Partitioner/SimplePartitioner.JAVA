@@ -1,7 +1,6 @@
-package partitioner;
+package Partitioner;
 
-
-import kafka.utils.VerifiableProperties;
+//import kafka.utils.VerifiableProperties;
 import org.apache.kafka.clients.producer.Partitioner;
 import org.apache.kafka.common.Cluster;
 
