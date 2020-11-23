@@ -9,9 +9,10 @@ import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 
-public class NewProducer {
+public class ProducerHighLevelAPI {
     public static void main(String[] args){
-
+        System.out.println("ProducerHighLevelAPI run ...");
+        
         // 0) config
         // good to check the default config : /kafka/config/producer.Properties
         Properties props = new Properties();

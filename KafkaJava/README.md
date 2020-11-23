@@ -18,6 +18,17 @@ kafka-console-consumer --bootstrap-server localhost:9092 \
 --property print.key=true 
 ```
 
+- ProducerHighLevelAPI
+- 1.1 : run
+`java -jar build/libs/message-ordering-standalone-0.0.1.jar configuration/dev.properties data/input.txt`
+- 1-2. check the result:
+```bash
+kafka-console-consumer --bootstrap-server localhost:9092 \
+--topic first \
+--from-beginning \
+--formatter kafka.tools.DefaultMessageFormatter \
+--property print.key=true 
+```
 
 ### Ref
 - https://kafka-tutorials.confluent.io/
