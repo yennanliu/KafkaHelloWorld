@@ -16,6 +16,7 @@
 	- [Confluent](https://github.com/yennanliu/ConfluentHelloWorld)
 	- k8s
 - [kafka_intro](https://github.com/yennanliu/KafkaHelloWorld/blob/master/doc/kafka_intro.md)
+- [Kafka official doc](https://kafka.apache.org/documentation/#gettingStarted)
 
 ## Structure
 ```

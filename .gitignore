@@ -27,3 +27,7 @@ data/orders.txt
 
 # IntelliJ
 .idea/
+
+# KafkaJava
+KafkaJava/.gradle/*
+KafkaJava/.gradle
