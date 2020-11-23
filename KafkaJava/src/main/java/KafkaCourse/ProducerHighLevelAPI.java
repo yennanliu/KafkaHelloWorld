@@ -12,8 +12,8 @@ import org.apache.kafka.common.serialization.StringSerializer;
 public class ProducerHighLevelAPI {
     public static void main(String[] args){
         System.out.println("ProducerHighLevelAPI run ...");
-        
-        // 0) config
+
+        // 0) Config
         // good to check the default config : /kafka/config/producer.Properties
         Properties props = new Properties();
 
@@ -35,17 +35,17 @@ public class ProducerHighLevelAPI {
         // size of one batch of msg (optional)
         props.put("batch.size", 16384);
 
-        // 1) create producer
+        // 1) Create producer
         // Producer<key, value> -> the msg will be in the <key, value > format
         // while key is relative to the msg partition
         Producer<String, String> producer = new KafkaProducer<String, String>(props);
 
-        // 3) prepare the data (msg)
+        // 2) Prepare the data (msg)
         String topic = "first";
         String value = "hello kafka !!!!!!";
         ProducerRecord record = new ProducerRecord(topic, value);
 
-        // 2) send the msg
+        // 3) Send the msg
         producer.send(record);
 
         // close the producer

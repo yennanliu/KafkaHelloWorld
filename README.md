@@ -17,6 +17,10 @@
 	- k8s
 - [kafka_intro](https://github.com/yennanliu/KafkaHelloWorld/blob/master/doc/kafka_intro.md)
 - [Kafka official doc](https://kafka.apache.org/documentation/#gettingStarted)
+- Ref projects
+	- [kafka-beginners-course](https://github.com/yennanliu/utility_Java/tree/master/kafka-beginners-course)
+	- [kafka-streams-course](https://github.com/yennanliu/utility_Java/tree/master/kafka-streams-course)
+	- [kafka_learning](https://github.com/yennanliu/utility_Java/tree/master/kafka_learning)
 
 ## Structure
 ```
