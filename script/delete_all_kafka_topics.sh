@@ -5,10 +5,9 @@ delete_all_kafka_topics(){
 k_topics=$(kafka-topics  --zookeeper  127.0.0.1:2181 --list)
 for topic in ${k_topics}; 
 do
-	echo "delete topic = " $topic
-	kafka-topics  --zookeeper  127.0.0.1:2181 --topic $topic --delete
+    echo "delete topic = " $topic
+    kafka-topics  --zookeeper  127.0.0.1:2181 --topic $topic --delete
 done
-
 }
 
 delete_all_kafka_topics

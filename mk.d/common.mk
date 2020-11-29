@@ -8,3 +8,4 @@ help:
 	@echo "  run_kz     run kafka & zookeeper"
 	@echo "  stop_kz    stop kafka & zookeeper"
 	@echo "  make_topic crate default topics"
+	@echo "  delete_topics delete all topics"
