@@ -7,6 +7,7 @@ help:
 	@echo "  console       run sbt console"
 	@echo "  run_kz        run kafka & zookeeper"
 	@echo "  stop_kz       stop kafka & zookeeper"
+	@echo "  restart_kz    restart kafka & zookeeper"
 	@echo "  make_topic    crate default topics"
 	@echo "  delete_topics delete all topics"
 	@echo "  k_status      show kafka status"

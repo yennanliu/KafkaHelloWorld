@@ -41,7 +41,7 @@ public class ProducerHighLevelAPI {
         Producer<String, String> producer = new KafkaProducer<String, String>(props);
 
         // 2) Prepare the data (msg)
-        String topic = "first";
+        String topic = "first_";
         String value = "hello kafka !!!!!!";
         ProducerRecord record = new ProducerRecord(topic, value);
 
