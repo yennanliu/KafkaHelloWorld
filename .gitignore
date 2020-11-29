@@ -31,3 +31,4 @@ data/orders.txt
 # KafkaJava
 KafkaJava/.gradle/*
 KafkaJava/.gradle
+KafkaJava/.gradle*

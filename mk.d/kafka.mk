@@ -13,3 +13,6 @@ make_topic:
 
 delete_topics:
 	bash script/delete_all_kafka_topics.sh
+
+k_status:
+	bash script/kafka_status.sh
