@@ -4,13 +4,12 @@ package KafkaCourse;
 // create a producer via kafka Java high level API
 
 import java.util.Properties;
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.Producer;
-import org.apache.kafka.clients.producer.ProducerRecord;
+
+import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
 
 public class ProducerHighLevelAPI {
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception{
         System.out.println("ProducerHighLevelAPI run ...");
 
         // 0) Config
@@ -45,8 +44,23 @@ public class ProducerHighLevelAPI {
         String value = "hello kafka !!!!!!";
         ProducerRecord record = new ProducerRecord(topic, value);
 
-        // 3) Send the msg
-        producer.send(record);
+        // 3) Send the msg (Asynchronous)
+        // https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/thread/CallableThreadDemo_1.java
+        //producer.send(record);
+
+        // 3') Send the msg (Synchronize)
+        // producer.send(record).get();
+
+        // 3'') Send the msg (Asynchronous) and wait for call back
+        producer.send(record, new Callback() {
+            // call back method
+            public void onCompletion(RecordMetadata metadata, Exception exception) {
+                // to which partition
+                System.out.println("*** partition : " + metadata.partition());
+                // offset
+                System.out.println("*** offset : " +  metadata.offset());
+            }
+        });
 
         // close the producer
         producer.close();
