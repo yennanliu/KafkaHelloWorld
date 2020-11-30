@@ -43,6 +43,9 @@ public class ProducerHighLevelAPI {
         String topic = "fitst_2";
         String value = "hello kafka !!!!!!";
         ProducerRecord record = new ProducerRecord(topic, value);
+        // or can specify partition value here
+        //ProducerRecord record = new ProducerRecord(topic, 1, null, value);
+
 
         // 3) Send the msg (Asynchronous)
         // https://github.com/yennanliu/JavaHelloWorld/blob/main/src/main/java/thread/CallableThreadDemo_1.java
