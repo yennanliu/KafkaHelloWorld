@@ -26,7 +26,10 @@ public class ProducerHighLevelAPI {
 
         // wait till all followers' (copy) responses (optional)
         // could be ["all", -1, 0 , 1]
-        props.put("acks", "1");
+        props.setProperty("acks", "1");
+
+        // add partition (optional)
+        props.setProperty("KafkaCourse.class", "KafkaCourse.MyPartitioner");
 
         // max retry when sending msg (optional)
         props.put("retries", 0);
