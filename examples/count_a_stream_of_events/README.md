@@ -9,7 +9,14 @@
 
 ### Quick Start
 ```bash
+# run docker
 git clone https://github.com/yennanliu/KafkaHelloWorld.git
 cd KafkaHelloWorld/examples/count_a_stream_of_events
 docker-compose up -d
+
+
+mkdir -p src/main/avro
+
+# compile 
+./gradlew build
 ```
