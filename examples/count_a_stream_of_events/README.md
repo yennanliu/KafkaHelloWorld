@@ -20,14 +20,12 @@ docker-compose up -d
 #--------------------------------------
 # into kafka broker env (as root user)
 docker exec -u root -it broker bash 
+
+#--------------------------------------
+#  PART 3 : INSTALL DEPEDENCY
+#--------------------------------------
 yum install git unzip nano which
 
-git clone https://github.com/yennanliu/KafkaHelloWorld.git
-cd KafkaHelloWorld/examples/count_a_stream_of_events
-
-#--------------------------------------
-#  PART 3 : INTO DEPEDENCY
-#--------------------------------------
 # install gradle
 # https://linuxize.com/post/how-to-install-gradle-on-centos-7/
 wget https://services.gradle.org/distributions/gradle-5.0-bin.zip -P /tmp
@@ -45,10 +43,13 @@ export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
 gradle -v
 
 #--------------------------------------
-#  PART 4 : INNIT JAVA PROJECT (gradle)
+#  PART 4 : INIT JAVA PROJECT (gradle) & GET FILES
 #--------------------------------------
 gradle wrapper
-mkdir -p src/main/avro
+
+git clone https://github.com/yennanliu/KafkaHelloWorld.git
+cp -fr KafkaHelloWorld/examples/count_a_stream_of_events/src/ .
+cp -fr KafkaHelloWorld/examples/count_a_stream_of_events/configuration/ .
 
 # compile 
 ./gradlew build
