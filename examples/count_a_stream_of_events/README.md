@@ -51,6 +51,9 @@ git clone https://github.com/yennanliu/KafkaHelloWorld.git
 cp -fr KafkaHelloWorld/examples/count_a_stream_of_events/src/ .
 cp -fr KafkaHelloWorld/examples/count_a_stream_of_events/configuration/ .
 
-# compile 
+# build 
 ./gradlew build
+
+# compile
+./gradlew shadowJar
 ```
