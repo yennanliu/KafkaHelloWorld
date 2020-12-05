@@ -13,11 +13,15 @@ git clone https://github.com/yennanliu/KafkaHelloWorld.git
 cd KafkaHelloWorld/examples/count_a_stream_of_events
 docker-compose up -d
 
-# into the kafka broker env
-docker exec -it broker bash 
+# into kafka broker env (as root user)
+docker exec -u root -it broker bash 
+
+yum install git
+git clone https://github.com/yennanliu/KafkaHelloWorld.git
+cd KafkaHelloWorld/examples/count_a_stream_of_events
+
 
 gradle wrapper
-
 mkdir -p src/main/avro
 
 # compile 
