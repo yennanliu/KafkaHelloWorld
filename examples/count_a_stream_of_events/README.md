@@ -8,19 +8,45 @@
 
 ### Quick Start
 ```bash
-# run docker
+#--------------------------------------
+#  PART 1 : RUN DOCKER
+#--------------------------------------
 git clone https://github.com/yennanliu/KafkaHelloWorld.git
 cd KafkaHelloWorld/examples/count_a_stream_of_events
 docker-compose up -d
 
+#--------------------------------------
+#  PART 2 : INTO KAFKA ENV
+#--------------------------------------
 # into kafka broker env (as root user)
 docker exec -u root -it broker bash 
+yum install git unzip nano which
 
-yum install git
 git clone https://github.com/yennanliu/KafkaHelloWorld.git
 cd KafkaHelloWorld/examples/count_a_stream_of_events
 
+#--------------------------------------
+#  PART 3 : INTO DEPEDENCY
+#--------------------------------------
+# install gradle
+# https://linuxize.com/post/how-to-install-gradle-on-centos-7/
+wget https://services.gradle.org/distributions/gradle-5.0-bin.zip -P /tmp
+unzip -d /opt/gradle /tmp/gradle-5.0-bin.zip
+ls /opt/gradle/gradle-5.0
+nano /etc/profile.d/gradle.sh
+# export GRADLE_HOME=/opt/gradle/gradle-5.0
+# export PATH=${GRADLE_HOME}/bin:${PATH}
 
+chmod +x /etc/profile.d/gradle.sh
+source /etc/profile.d/gradle.sh
+# verify if gradle is installed
+# https://askubuntu.com/questions/483552/gradle-finds-wrong-java-home-even-though-its-correctly-set-ubuntu-13-10
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
+gradle -v
+
+#--------------------------------------
+#  PART 4 : INNIT JAVA PROJECT (gradle)
+#--------------------------------------
 gradle wrapper
 mkdir -p src/main/avro
 
