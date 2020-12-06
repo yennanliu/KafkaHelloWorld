@@ -24,7 +24,7 @@ docker exec -u root -it broker bash
 #--------------------------------------
 #  PART 3 : INSTALL DEPEDENCY
 #--------------------------------------
-yum install git unzip nano which
+yum install -y git unzip nano which java-1.8.0-openjdk
 
 # install gradle
 # https://linuxize.com/post/how-to-install-gradle-on-centos-7/
@@ -39,7 +39,7 @@ chmod +x /etc/profile.d/gradle.sh
 source /etc/profile.d/gradle.sh
 # verify if gradle is installed
 # https://askubuntu.com/questions/483552/gradle-finds-wrong-java-home-even-though-its-correctly-set-ubuntu-13-10
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
+export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk-1.8.0.272.b10-3.el8_3.x86_64
 gradle -v
 
 #--------------------------------------
