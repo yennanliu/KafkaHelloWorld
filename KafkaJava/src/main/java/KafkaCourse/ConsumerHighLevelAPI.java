@@ -30,8 +30,8 @@ public class ConsumerHighLevelAPI {
         // create consumer object
         KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
 
-        // subscribe topics
-        consumer.subscribe(Arrays.asList("first"));
+        // subscribe topics ( set topic = "first-topic" )
+        consumer.subscribe(Arrays.asList("first-topic"));
 
         // get the msg (from producer)
         while (true){
