@@ -1,7 +1,6 @@
 package KafkaCourse;
 
-import kafka.api.FetchRequestBuilder;
-import kafka.api.FetchRequest;
+import kafka.message.MessageAndOffset;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 
@@ -10,6 +9,12 @@ import org.apache.kafka.clients.consumer.ConsumerRecords;
 // use SimpleConsumer as kafka low level API
 import kafka.javaapi.consumer.SimpleConsumer;
 
+import kafka.api.FetchRequestBuilder;
+import kafka.api.FetchRequest;
+import kafka.javaapi.FetchResponse;
+import kafka.javaapi.message.ByteBufferMessageSet;
+
+import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Properties;
 
@@ -25,7 +30,15 @@ public class ConsumerLowLevelAPI {
         // fetch the data
         //FetchRequest req = new FetchRequest();
         FetchRequest req = new FetchRequestBuilder().addFetch("first-topic", 1, 5, 10*1024).build();
-        consumer.fetch(req);
+        FetchResponse resp = consumer.fetch(req);
 
+        resp.messageSet("first", 1);
+
+        ByteBufferMessageSet messageSet = resp.messageSet("first", 1);
+
+        for (MessageAndOffset messageAndOffset : messageSet) {
+            ByteBuffer buffer =  messageAndOffset.message().payload();
+            // TBC
+        }
     }
 }
