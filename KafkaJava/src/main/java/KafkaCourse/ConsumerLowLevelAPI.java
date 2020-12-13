@@ -20,7 +20,7 @@ import java.util.Properties;
 
 public class ConsumerLowLevelAPI {
     @SuppressWarnings("all")
-    public static void main(String [] args){
+    public static void main(String [] args) throws Exception {
 
         // create a simple consumer
         String host = "localhost";
@@ -38,7 +38,9 @@ public class ConsumerLowLevelAPI {
 
         for (MessageAndOffset messageAndOffset : messageSet) {
             ByteBuffer buffer =  messageAndOffset.message().payload();
-            // TBC
+            byte[] bs = new byte[buffer.limit()];
+            buffer.get(bs);
+            String value = new String(bs, "UTF-8");
         }
     }
 }
