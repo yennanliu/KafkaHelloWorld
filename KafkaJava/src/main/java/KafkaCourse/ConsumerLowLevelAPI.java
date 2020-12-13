@@ -1,13 +1,11 @@
 package KafkaCourse;
 
-import kafka.api.TopicMetadataResponse;
 import kafka.cluster.BrokerEndPoint;
 import kafka.javaapi.PartitionMetadata;
 import kafka.javaapi.TopicMetadata;
+import kafka.javaapi.TopicMetadataResponse;
 import kafka.javaapi.TopicMetadataRequest;
 import kafka.message.MessageAndOffset;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.apache.kafka.clients.consumer.ConsumerRecords;
 
 // https://cwiki.apache.org/confluence/display/KAFKA/0.8.0+SimpleConsumer+Example
 // https://blog.csdn.net/suifeng3051/article/details/38657465
@@ -22,6 +20,9 @@ import kafka.javaapi.message.ByteBufferMessageSet;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Properties;
+
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 
 public class ConsumerLowLevelAPI {
     @SuppressWarnings("all")
@@ -42,18 +43,18 @@ public class ConsumerLowLevelAPI {
                 10*1024, "metaData");
 
         // get metaData information
-        kafka.javaapi.TopicMetadataRequest request = new kafka.javaapi.TopicMetadataRequest(Arrays.asList("first"));
-        kafka.javaapi.TopicMetadataResponse response =  metaConsumer.send(request);
+        TopicMetadataRequest request = new TopicMetadataRequest(Arrays.asList("first"));
+        TopicMetadataResponse response =  metaConsumer.send(request);
 
         dropOut:
         for (TopicMetadata topicMetadata : response.topicsMetadata()) {
             // go through topic, and filtet topic == first
             if ("first".equals(topicMetadata.topic())){
                 // go through partition, and get partition == 1
-                for (PartitionMetadata partitionMetadatu: topicMetadata.partitionsMetadata()) {
-                    int partid = partitionMetadatu.partitionId();
+                for (PartitionMetadata partitionMetadata: topicMetadata.partitionsMetadata()) {
+                    int partid = partitionMetadata.partitionId();
                     if (partid == 1){
-                        leader = partitionMetadatu.leader();
+                        leader = partitionMetadata.leader();
                         System.out.println("*** leader = " + leader);
                         break dropOut;  // if found, break out the loop directly
                     }
@@ -88,6 +89,7 @@ public class ConsumerLowLevelAPI {
             byte[] bs = new byte[buffer.limit()];
             buffer.get(bs);
             String value = new String(bs, "UTF-8");
+            System.out.println(value);
         }
     }
 }
