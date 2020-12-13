@@ -24,6 +24,7 @@ import java.util.Properties;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
+/// TO FIX : Exception in thread "main" java.lang.NoSuchMethodError: org.apache.kafka.common.network.NetworkSend: method <init>(Ljava/lang/String;[Ljava/nio/ByteBuffer;)V not found
 public class ConsumerLowLevelAPI {
     @SuppressWarnings("all")
     public static void main(String [] args) throws Exception {
