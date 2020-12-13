@@ -1,5 +1,10 @@
 package KafkaCourse;
 
+import kafka.api.TopicMetadataResponse;
+import kafka.cluster.BrokerEndPoint;
+import kafka.javaapi.PartitionMetadata;
+import kafka.javaapi.TopicMetadata;
+import kafka.javaapi.TopicMetadataRequest;
 import kafka.message.MessageAndOffset;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -22,10 +27,52 @@ public class ConsumerLowLevelAPI {
     @SuppressWarnings("all")
     public static void main(String [] args) throws Exception {
 
+        // init values
+        BrokerEndPoint leader = null;
+
         // create a simple consumer
         String host = "localhost";
         int port = 9092;
-        SimpleConsumer consumer = new SimpleConsumer(host, port, 500, 10*1024, "accessLeader");
+
+        /*
+         PART 1 : GET METADATA INFORM (leader, partition...)
+         */
+        // get partiiton leader
+        SimpleConsumer metaConsumer = new SimpleConsumer(host, port, 500,
+                10*1024, "metaData");
+
+        // get metaData information
+        kafka.javaapi.TopicMetadataRequest request = new kafka.javaapi.TopicMetadataRequest(Arrays.asList("first"));
+        kafka.javaapi.TopicMetadataResponse response =  metaConsumer.send(request);
+
+        dropOut:
+        for (TopicMetadata topicMetadata : response.topicsMetadata()) {
+            // go through topic, and filtet topic == first
+            if ("first".equals(topicMetadata.topic())){
+                // go through partition, and get partition == 1
+                for (PartitionMetadata partitionMetadatu: topicMetadata.partitionsMetadata()) {
+                    int partid = partitionMetadatu.partitionId();
+                    if (partid == 1){
+                        leader = partitionMetadatu.leader();
+                        System.out.println("*** leader = " + leader);
+                        break dropOut;  // if found, break out the loop directly
+                    }
+                }
+            }
+        }
+
+        // if can not get the correct meta (leader, partition) information, will not run the application
+        if (leader == null) {
+            System.out.println("Partition information not correct. Abort the process");
+            return;
+        }
+
+        /*
+         PART 2 : LOGIC RUN WITH LDADER
+         */
+        // host, port should be the leader in such partition
+        SimpleConsumer consumer = new SimpleConsumer(leader.host(), leader.port(), 500,
+                10*1024, "accessLeader");
 
         // fetch the data
         //FetchRequest req = new FetchRequest();
