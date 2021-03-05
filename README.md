@@ -316,4 +316,7 @@ sbt test
 	- https://github.com/wurstmeister/kafka-docker
 	- https://github.com/wurstmeister/kafka-docker/wiki/Connectivity
 	
+- Others
+	- https://www.slideshare.net/ConfluentInc/reliability-guarantees-for-apache-kafka
+	
 </details>	
