@@ -136,10 +136,12 @@ kafka-console-consumer --bootstrap-server localhost:9092 \
 kafka-topics --create -zookeeper localhost:2181 --replication-factor 1  --partitions 1 --topic topic_ProducerConsumerPartitioner
 
 # run the consumer
-java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar ProducerConsumerPartitioner.Consumer
+#java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar ProducerConsumerPartitioner.Consumer
+java -cp target/scala-2.11/kafaka-app-assembly-1.0.jar com.yen.app.Consumer
 
 # run the producer
-java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar ProducerConsumerPartitioner.Producer
+#java -cp target/scala-2.11/KafkaHelloWorld-assembly-1.0.jar ProducerConsumerPartitioner.Producer
+java  -cp target/scala-2.11/kafaka-app-assembly-1.0.jar  com.yen.Producer.producerV2
 
 # check the result
 kafka-console-consumer --bootstrap-server localhost:9092 \
