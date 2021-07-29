@@ -14,8 +14,11 @@
 	- Docker
 	- [Confluent](https://github.com/yennanliu/ConfluentHelloWorld)
 	- k8s
-- [kafka_intro](https://github.com/yennanliu/KafkaHelloWorld/blob/master/doc/kafka_intro.md)
-- [Kafka official doc](https://kafka.apache.org/documentation/#gettingStarted)
+- Kafka intro
+	- [kafka_intro](https://github.com/yennanliu/KafkaHelloWorld/blob/master/doc/kafka_intro.md)
+	- [Kafka official doc](https://kafka.apache.org/documentation/#gettingStarted)
+- Kafka Auth
+	- [kafka_auth](https://github.com/yennanliu/KafkaHelloWorld/blob/master/doc/kafka_auth.md)
 - Ref projects
 	- [kafka-beginners-course](https://github.com/yennanliu/utility_Java/tree/master/kafka-beginners-course)
 	- [kafka-streams-course](https://github.com/yennanliu/utility_Java/tree/master/kafka-streams-course)
