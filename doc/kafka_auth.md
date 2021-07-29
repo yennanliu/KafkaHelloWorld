@@ -11,7 +11,9 @@
 - Ref
     - https://docs.confluent.io/platform/current/kafka/overview-authentication-methods.html
 
-### 1) SASL/GSSAPI (Kerberos)
+### 1) - SASL using JAAS
+
+### 2) SASL/GSSAPI (Kerberos)
 - Use the `Kerberos` mechanism. Good to use if already use kerberos
 - SASL/GSSAPI is for organizations using Kerberos (for example, by using Active Directory). You don’t need to install a new server just for Apache Kafka®. Ask your Kerberos administrator for a principal for each Kafka broker in your cluster and for every operating system user that will access Kafka with Kerberos authentication (via clients and tools).
 - Note:
@@ -45,6 +47,11 @@
     - https://docs.confluent.io/platform/current/kafka/authentication_sasl/authentication_sasl_gssapi.html#kafka-sasl-auth-gssapi
 
 
+### 3) SASL/OAUTHBEARER
+### 4) SASL/PLAIN
+### 5) SASL/SCRAM
+### 6) Delegation Tokens (SASL/SSL)
+### 7) LDAP
 
 ## Terms
 - `kafka_server_jaas.conf` : the conf for kafka auth (SASL/GSSAPI (Kerberos))
@@ -57,3 +64,7 @@
     - `Secure Sockets Layer`. and, in short, it's the standard technology for keeping an internet connection secure and safeguarding any sensitive data that is being sent between two systems, preventing criminals from reading and modifying any information transferred, including potential personal details. The two systems can be a server and a client (for example, a shopping website and browser) or server to server (for example, an application with personal identifiable information or with payroll information).
     - https://www.websecurity.digicert.com/security-topics/what-is-ssl-tls-https
 - SASL_SSL: if SSL encryption is enabled (SSL encryption should always be used if SASL mechanism is PLAIN)
+
+## Ref
+- SASL VS SSL: 
+    - https://stackoverflow.com/questions/11347304/security-authentication-ssl-vs-sasl
