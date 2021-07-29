@@ -8,7 +8,6 @@
 	- [Scala](https://github.com/yennanliu/KafkaHelloWorld/tree/master/src)
 	- [Java](https://github.com/yennanliu/KafkaHelloWorld/tree/master/KafkaJava), [examples](https://github.com/yennanliu/KafkaHelloWorld/tree/master/examples)
 	- [Python](https://github.com/yennanliu/KafkaHelloWorld/tree/master/KafkaPython/src/main/python)
-	- Go
 
 - Kafka infra build
 	- [Manually](https://github.com/yennanliu/KafkaHelloWorld#Quick-Start)
