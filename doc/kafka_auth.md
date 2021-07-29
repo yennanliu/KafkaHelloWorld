@@ -12,6 +12,11 @@
     - https://docs.confluent.io/platform/current/kafka/overview-authentication-methods.html
 
 ### 1) SASL using JAAS
+- Kafka uses the Java Authentication and Authorization Service (JAAS) for SASL configuration. You must provide JAAS configurations for all SASL authentication mechanisms. There are two ways to configure Kafka clients to provide the necessary information for JAAS:
+    - Specify the JAAS configuration using the sasl.jaas.config configuration property (recommended)
+    - Pass a static JAAS configuration file into the JVM using the java.security.auth.login.config property at runtime
+- Ref
+    - https://docs.confluent.io/platform/current/kafka/authentication_sasl/index.html
 
 ### 2) SASL/GSSAPI (Kerberos)
 - Use the `Kerberos` mechanism. Good to use if already use kerberos
@@ -54,6 +59,10 @@
 ### 7) LDAP
 
 ## Terms
+-  `JAAS`
+    - Java Authentication and Authorization Service (JAAS)
+    - Kafka uses the Java Authentication and Authorization Service (JAAS) for SASL configuration.
+    - https://docs.oracle.com/javase/8/docs/technotes/guides/security/jaas/JAASRefGuide.html
 - `kafka_server_jaas.conf` : 
     the conf for kafka auth (SASL/GSSAPI (Kerberos))
 - `KDC` : 
